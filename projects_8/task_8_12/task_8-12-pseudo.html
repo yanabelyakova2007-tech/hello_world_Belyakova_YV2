@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3 — Псевдоклассы и селекторы по атрибутам</title>
+    <style>
+        /* ================================================
+           ОБЩИЕ СТИЛИ
+        ================================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #1a2a3a;
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 8px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* ================================================
+           ЗАДАНИЕ 3.1: ПСЕВДОКЛАССЫ ДЛЯ СПИСКА
+        ================================================ */
+
+        /* :first-child — первый пункт списка */
+        li:first-child {
+            background-color: #e0eaff;
+            font-weight: bold;
+            color: #1565c0;
+        }
+
+        /* :last-child — последний пункт списка */
+        li:last-child {
+            background-color: #ffe0e0;
+            font-weight: bold;
+            color: #c0392b;
+        }
+
+        /* :nth-child(3n) — каждый третий пункт */
+        li:nth-child(3n) {
+            background-color: #e0f5e0;
+            border-left: 4px solid #2e7d32;
+        }
+
+        /* :not(:first-child) — разделители для всех, кроме первого */
+        li:not(:first-child) {
+            border-top: 1px solid #ddd;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+
+        /* Стили для списка */
+        ol {
+            background-color: #fafaf7;
+            padding: 15px 15px 15px 35px;
+            border-radius: 8px;
+        }
+        li {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 6px;
+        }
+
+        /* ================================================
+           ЗАДАНИЕ 3.2: ЧЕРЕДОВАНИЕ СТРОК ТАБЛИЦЫ
+        ================================================ */
+
+        /* :nth-child(even) — чётные строки таблицы */
+        tr:nth-child(even) {
+            background-color: #e8f5e9;
+        }
+
+        /* Стили для таблицы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #2e7d32;
+            color: white;
+        }
+        tr:hover {
+            background-color: #fff3e0;
+        }
+
+        /* ================================================
+           ЗАДАНИЕ 3.3: ПСЕВДОКЛАССЫ ДЛЯ ССЫЛОК
+        ================================================ */
+
+        /* :hover — при наведении на ссылку */
+        a:hover {
+            color: #e74c3c;
+            text-decoration: underline;
+            background-color: #fff3e0;
+        }
+
+        /* :active — в момент клика */
+        a:active {
+            color: #c0392b;
+            transform: scale(0.98);
+            display: inline-block;
+        }
+
+        /* СЕЛЕКТОР ПО АТРИБУТУ: ссылки на PDF */
+        a[href$=".pdf"] {
+            color: #e74c3c;
+            font-weight: bold;
+            background-color: #ffe0e0;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Ссылки на внешние сайты — иконка */
+        a[href^="https"]::after {
+            content: " 🔗";
+            font-size: 0.8rem;
+        }
+
+        /* Общие стили для ссылок */
+        a {
+            color: #2e7d32;
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        /* ================================================
+           ЗАДАНИЕ 3.4: ПСЕВДОКЛАССЫ ДЛЯ ФОРМЫ
+        ================================================ */
+
+        /* :focus — при фокусе на поле ввода */
+        input:focus {
+            border: 2px solid #4caf50;
+            outline: none;
+            background-color: #e8f5e9;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+
+        /* :required — обязательные поля формы */
+        input:required {
+            border-left: 4px solid #e74c3c;
+            background-color: #fff5f5;
+        }
+
+        /* :valid — поле заполнено правильно */
+        input:valid {
+            border-color: #4caf50;
+        }
+
+        /* :invalid — поле заполнено неправильно */
+        input:invalid:not(:placeholder-shown) {
+            border-color: #e74c3c;
+            background-color: #ffe0e0;
+        }
+
+        /* Стили для формы */
+        form {
+            background-color: #fafaf7;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2e7d32;
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* placeholder стиль */
+        input::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* выделение текста */
+        ::selection {
+            background-color: #ffd966;
+            color: #1a2a3a;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎯 Задание 3: Псевдоклассы и селекторы</h1>
+
+    <!-- ===== ЗАДАНИЕ 3.1: СПИСОК ===== -->
+    <section>
+        <h2>📝 Список дел (псевдоклассы :first-child, :last-child, :nth-child(3n))</h2>
+        <ol>
+            <li>🔹 Первый пункт — будет синим (:first-child)</li>
+            <li>🔸 Второй пункт — обычный</li>
+            <li>🟢 Третий пункт — каждый третий получает зелёную полосу (:nth-child(3n))</li>
+            <li>🔹 Четвёртый пункт — обычный</li>
+            <li>🔸 Пятый пункт — обычный</li>
+            <li>🟢 Шестой пункт — каждый третий получает зелёную полосу</li>
+            <li>🔹 Седьмой пункт — обычный</li>
+            <li>🔴 Восьмой пункт — последний будет красным (:last-child)</li>
+        </ol>
+        <p><small>📌 Обратите внимание: у всех пунктов, кроме первого, есть верхняя граница (стиль <code>li:not(:first-child)</code>).</small></p>
+    </section>
+
+    <!-- ===== ЗАДАНИЕ 3.2: ТАБЛИЦА ===== -->
+    <section>
+        <h2>📊 Таблица успеваемости (:nth-child(even) — чётные строки)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Студент</th>
+                    <th>Предмет</th>
+                    <th>Оценка</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Иванов Иван</td><td>HTML/CSS</td><td>5</td></tr>
+                <tr><td>Петров Пётр</td><td>HTML/CSS</td><td>4</td></tr>
+                <tr><td>Сидорова Анна</td><td>HTML/CSS</td><td>5</td></tr>
+                <tr><td>Козлов Дмитрий</td><td>HTML/CSS</td><td>3</td></tr>
+                <tr><td>Морозова Елена</td><td>HTML/CSS</td><td>5</td></tr>
+            </tbody>
+        </table>
+        <p><small>📌 Чётные строки (<code>tr:nth-child(even)</code>) имеют зелёный фон.</small></p>
+    </section>
+
+    <!-- ===== ЗАДАНИЕ 3.3: ССЫЛКИ ===== -->
+    <section>
+        <h2>🔗 Примеры ссылок (:hover, :active, селектор по атрибуту)</h2>
+        <ul>
+            <li><a href="about.html">📄 Внутренняя ссылка (about.html)</a> — не меняет цвет при наведении</li>
+            <li><a href="https://stepik.org">🌐 Внешняя ссылка (https://stepik.org)</a> — при наведении станет красной</li>
+            <li><a href="document.pdf">📑 Ссылка на PDF-файл</a> — <strong>красная с розовым фоном</strong> (селектор <code>a[href$=".pdf"]</code>)</li>
+        </ul>
+        <p><small>📌 Наведите мышь на любую ссылку — цвет изменится (:hover). Кликните — сработает :active.</small></p>
+    </section>
+
+    <!-- ===== ЗАДАНИЕ 3.4: ФОРМА ===== -->
+    <section>
+        <h2>📝 Форма обратной связи (:focus, :required)</h2>
+        <form action="#" method="post">
+            <label for="name">Имя (обычное поле)</label>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+
+            <label for="email">E-mail (обязательное поле) *</label>
+            <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+
+            <button type="submit">✉️ Отправить</button>
+        </form>
+        <p><small>📌 Поле E-mail — обязательное (<code>required</code>): красная полоска слева. При клике на поле — зелёная подсветка (:focus).</small></p>
+    </section>
+
+    <footer style="text-align: center; margin-top: 30px; color: #666;">
+        <hr>
+        <p>✅ Использованы псевдоклассы: <code>:first-child, :last-child, :nth-child(even), :nth-child(3n), :not(), :hover, :active, :focus, :required, :valid, :invalid</code></p>
+        <p>✅ Использованы селекторы по атрибуту: <code>[href$=".pdf"]</code>, <code>[href^="https"]</code></p>
+        <p>✅ Использованы псевдоэлементы: <code>::after</code>, <code>::placeholder</code>, <code>::selection</code></p>
+    </footer>
+
+</body>
+</html>

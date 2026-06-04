@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотогалерея «Мой день» — задание 2</title>
+    <meta name="description" content="Пример фотогалереи с использованием figure, figcaption и ленивой загрузки">
+</head>
+<body>
+
+    <h1>📸 Мой день в фотографиях</h1>
+    <p>Подборка кадров из одного субботнего дня. Первая картинка загружается сразу, остальные — только при прокрутке (lazy loading).</p>
+
+    <hr>
+
+    <!-- Первая картинка — loading="eager" (загружается сразу) -->
+    <figure>
+        <img src="images/morning-coffee.jpg" 
+             alt="Чашка кофе и цветочки на столе у окна, утреннее солнце"
+             width="600" 
+             height="400"
+             loading="eager">
+        <figcaption>☕ Утро начинается с кофе. 8:30, вид из окна.</figcaption>
+    </figure>
+
+    <!-- Остальные картинки — loading="lazy" -->
+    <figure>
+        <img src="images/on-the-way.jpg" 
+             alt="Машина в путешествии по осеннему лесу"
+             width="600" 
+             height="400"
+             loading="lazy">
+        <figcaption>🚌 По пути в центр. За окном — золотая осень.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="images/park-walk.webp" 
+             alt="Дорожка в парке, люди, деревья кругом"
+             width="600" 
+             height="400"
+             loading="lazy">
+        <figcaption>🐿️ Прогулка в парке. Белок не нашла я.</figcaption>
+    </figure>
+
+    <!-- Картинка-ссылка (открывает полный размер) -->
+    <figure>
+        <a href="images/book-store.jpg" 
+           target="_blank" 
+           rel="noopener noreferrer">
+            <img src="images/book-store.jpg" 
+                 alt="Книжный магазин в центре Нью Йорка"
+                 width="600" 
+                 height="400"
+                 loading="lazy">
+        </a>
+        <figcaption>📚 Книжный магазин (кликните на фото, чтобы открыть в полном размере). Стивен Кинг "Страна радости"- просто бомба.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="images/lunch.jpg" 
+             alt="Тосты с вкусным паштетом, ломтиками халапеньо и укропом на деревянном фоне"
+             width="600" 
+             height="400"
+             loading="lazy">
+        <figcaption>🍝 Обед в итальянском кафе. Тосты охеренные.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="images/evening-sunset.jpg" 
+             alt="Закат над морской бездной"
+             width="600" 
+             height="400"
+             loading="lazy">
+        <figcaption>🌇 Закат над морской бездной Идеальный конец дня.</figcaption>
+    </figure>
+
+    <hr>
+
+    <p><strong>💡 Проверка lazy loading:</strong> Откройте <kbd>F12</kbd> → вкладка <strong>Network</strong> → перезагрузите страницу (<kbd>Ctrl+Shift+R</kbd>). Обратите внимание: первая картинка (утренний кофе) загрузилась сразу, а остальные — только когда вы докрутите до них.</p>
+
+</body>
+</html>

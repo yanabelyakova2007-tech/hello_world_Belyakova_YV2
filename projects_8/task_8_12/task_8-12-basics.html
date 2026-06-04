@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2 — Базовые селекторы</title>
+    <style>
+        /* ================================================
+           1. УНИВЕРСАЛЬНЫЙ СЕЛЕКТОР (*)
+           Устанавливает box-sizing для ВСЕХ элементов
+        ================================================ */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ================================================
+           2. СЕЛЕКТОР ПО ТЕГУ (body)
+           Базовые стили для всей страницы
+        ================================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #1a2a3a;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ================================================
+           3. СЕЛЕКТОР ПО ТЕГУ (p)
+           Стили для всех абзацев
+        ================================================ */
+        p {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        /* ================================================
+           4. СЕЛЕКТОР ПО КЛАССУ (.lead)
+           Выделение важных абзацев
+        ================================================ */
+        .lead {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2e7d32;
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+
+        /* ================================================
+           5. СЕЛЕКТОР ПО ID (#title)
+           Уникальный стиль для заголовка
+        ================================================ */
+        #title {
+            color: #1565c0;
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #1565c0;
+        }
+
+        /* ================================================
+           6. ГРУППИРОВКА ЧЕРЕЗ ЗАПЯТУЮ (h1, h2, h3)
+           Общие стили для всех заголовков
+        ================================================ */
+        h1, h2, h3 {
+            font-family: 'Arial', sans-serif;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* ================================================
+           7. ДВА КЛАССА НА ЭЛЕМЕНТЕ (.box.highlight)
+           Стиль для элемента с классами "box" и "highlight"
+        ================================================ */
+        .box.highlight {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff9800;
+        }
+
+        /* ================================================
+           8. ТРИ КЛАССА НА ЭЛЕМЕНТЕ (.box.highlight.large)
+           Стиль для элемента с классами box, highlight, large
+        ================================================ */
+        .box.highlight.large {
+            font-size: 1.2rem;
+            padding: 20px;
+            background-color: #ffe0b2;
+            border-left: 5px solid #e65100;
+            border-radius: 12px;
+        }
+
+        /* ================================================
+           ДОПОЛНИТЕЛЬНО: стили для общих блоков .box
+        ================================================ */
+        .box {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .box:hover {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="title">📚 Учим CSS-селекторы</h1>
+
+    <p>Это обычный абзац. У него нет класса. Он получил стили только от селектора по тегу <code>p</code>.</p>
+
+    <p class="lead">Это важный абзац с классом "lead". Он получил стили от селектора по тегу <code>p</code> И от селектора по классу <code>.lead</code>. Обратите внимание на жирный шрифт и зелёную полоску слева.</p>
+
+    <h2>Примеры блоков с разными классами</h2>
+
+    <!-- Простой блок с классом box -->
+    <div class="box">
+        <strong>🔹 .box</strong> — только класс box. Обычный блок с белым фоном и тенью.
+    </div>
+
+    <!-- Блок с двумя классами: box и highlight -->
+    <div class="box highlight">
+        <strong>🔸 .box.highlight</strong> — два класса! У этого блока есть <code>class="box highlight"</code>. Он получил оранжевую полоску слева.
+    </div>
+
+    <!-- Блок с тремя классами: box, highlight, large -->
+    <div class="box highlight large">
+        <strong>🔹 .box.highlight.large</strong> — три класса! У этого блока <code>class="box highlight large"</code>. Он получил тёмно-оранжевую полоску, увеличенный шрифт и дополнительные отступы.
+    </div>
+
+    <hr>
+
+    <h3>Как проверить в DevTools</h3>
+    <p>Нажмите <kbd>F12</kbd> → вкладка <strong>Elements</strong> → выберите любой блок с классом → справа в панели <strong>Styles</strong> вы увидите, какие правила применились к этому элементу.</p>
+
+</body>
+</html>

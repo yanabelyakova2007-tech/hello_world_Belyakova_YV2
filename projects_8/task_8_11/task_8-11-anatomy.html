@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1 — Анатомия CSS-правила</title>
+    <style>
+        /* =============================================== */
+        /* МНОГОСТРОЧНЫЙ КОММЕНТАРИЙ                      */
+        /* Этот файл демонстрирует структуру CSS-правил:  */
+        /* селектор { свойство: значение; }               */
+        /* =============================================== */
+
+        /* ──────── правило для body ──────── */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* КОММЕНТАРИЙ В КОНЦЕ СТРОКИ */
+            background-color: #f5f5f5;
+            color: #1a2a3a;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        /* Однострочный комментарий: правило для заголовка h1 */
+        h1 {
+            color: #2e7d32;
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid #4caf50;
+            padding-bottom: 10px;
+        }
+
+        /* правило для h2 */
+        h2 {
+            color: #1565c0;
+            font-size: 1.8rem;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-left: 4px solid #1565c0;
+            padding-left: 15px;
+        }
+
+        /* правило для абзацев p */
+        p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-align: justify;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* правило для ссылок a */
+        a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            background-color: #e8f5e9;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* псевдокласс для ссылки при наведении (дополнительно) */
+        a:hover {
+            background-color: #2e7d32;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📚 Анатомия CSS-правила</h1>
+
+    <h2>Что такое CSS-правило?</h2>
+    <p>CSS-правило состоит из <strong>селектора</strong> и <strong>блока объявлений</strong>. Селектор отвечает на вопрос «кому применить стили?», а блок объявлений — «что именно сделать?».</p>
+
+    <h2>Структура объявления</h2>
+    <p>Каждое объявление — это пара <strong>свойство: значение;</strong>. Например: <code>color: red;</code> — свойство color, значение red. Точка с запятой разделяет объявления друг от друга.</p>
+
+    <h2>Примеры свойств</h2>
+    <p>В CSS существуют сотни свойств: <code>color</code>, <code>font-size</code>, <code>background</code>, <code>padding</code>, <code>margin</code>, <code>border</code>, <code>text-align</code> и многие другие.</p>
+
+    <p>Узнайте больше о CSS на <a href="https://developer.mozilla.org/ru/docs/Web/CSS" target="_blank" rel="noopener noreferrer">MDN Web Docs</a> — это лучшая документация по веб-технологиям.</p>
+
+</body>
+</html>

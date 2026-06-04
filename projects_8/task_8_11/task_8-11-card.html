@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3 — Карточка товара</title>
+    <style>
+        /* =======================================================
+           КАРТОЧКА ТОВАРА — демонстрация CSS-приёмов
+           
+           Здесь использованы:
+           - селектор по тегу (body)
+           - селектор по классу (.card, .price, .btn)
+           - несколько селекторов через запятую (h1, h2, h3)
+           - два класса на одном элементе (.card.product)
+           - шорткат padding с 4 значениями
+           - шорткат border
+           - цвет в HEX
+           - несколько шрифтов через запятую
+           - число без единицы (line-height: 1.5)
+        ======================================================= */
+
+        /* Однострочный комментарий: стили для body */
+        body {
+            font-family: "Roboto", "Arial", sans-serif;  /* несколько шрифтов через запятую */
+            background-color: #f0f2f5;  /* цвет в HEX */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Группа селекторов через запятую — общие стили для заголовков */
+        h1, h2, h3 {
+            color: #1a2a3a;
+            margin: 0 0 10px 0;
+            line-height: 1.3;  /* число без единицы */
+        }
+
+        /* ===== Стили для карточки ===== */
+        /* Два класса на одном элементе: .card.product */
+        .card.product {
+            max-width: 350px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Эффект при наведении на карточку */
+        .card.product:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Стиль для самого контента карточки */
+        .card {
+            /* шорткат padding с 4 значениями: верх | право | низ | лево */
+            padding: 20px 20px 25px 20px;
+        }
+
+        /* шорткат border для демонстрации (опционально) */
+        .card.demo-border {
+            border: 2px solid #4caf50;
+        }
+
+        /* Стили для названия товара внутри карточки */
+        .card h2 {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        /* Стили для описания */
+        .description {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;  /* число без единицы */
+            margin-bottom: 15px;
+        }
+
+        /* Стили для цены */
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        /* ===== Стили для кнопок (два класса: .btn.btn-primary) ===== */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        /* Класс btn-primary (вместе с .btn даёт два класса) */
+        .btn-primary {
+            background-color: #4caf50;
+            color: white;
+            width: 100%;
+        }
+
+        /* Эффект при наведении на кнопку */
+        .btn-primary:hover {
+            background-color: #2e7d32;
+            transform: scale(1.02);
+        }
+
+        /* Дополнительная секция для пояснений */
+        .note {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #2e7d32;
+        }
+
+        code {
+            background-color: #ddd;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card product">
+        <h2>🎧 Беспроводные наушники SoundPro X</h2>
+        <p class="description">Высококачественный звук с шумоподавлением, 30 часов работы без подзарядки, Bluetooth 5.3, быстрая зарядка USB-C. Идеально подходят для музыки, звонков и игр.</p>
+        <p class="price">5 490 ₽</p>
+        <button class="btn btn-primary">🛒 Добавить в корзину</button>
+        
+        <div class="note">
+            <strong>📖 Что использовано в этом CSS:</strong><br>
+            • Селектор по тегу: <code>body</code><br>
+            • Селектор по классу: <code>.card</code>, <code>.price</code>, <code>.btn</code><br>
+            • Несколько селекторов через запятую: <code>h1, h2, h3</code><br>
+            • Два класса на элементе: <code>.card.product</code> и <code>.btn.btn-primary</code><br>
+            • Шорткат <code>padding: 20px 20px 25px 20px</code><br>
+            • Шорткат <code>border: 2px solid #4caf50</code><br>
+            • Цвет в HEX: <code>#f0f2f5</code>, <code>#2e7d32</code><br>
+            • Несколько шрифтов: <code>"Roboto", "Arial", sans-serif</code><br>
+            • Число без единицы: <code>line-height: 1.5</code><br>
+            • Комментарии: однострочные, многострочные, в конце строки
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас — External CSS</title>
+    
+    <!-- Подключаем ТОТ ЖЕ внешний CSS-файл -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">🏠 Главная</a>
+        <a href="about.html">📖 О нас</a>
+    </nav>
+
+    <h1>О нашем проекте</h1>
+
+    <p>Это вторая страница сайта. Она использует <strong class="highlight">тот же самый CSS-файл</strong>, что и главная страница. Благодаря этому весь сайт выглядит единообразно — одинаковые шрифты, цвета, отступы и стили для ссылок.</p>
+
+    <p>Обратите внимание на ссылку ниже — при наведении она меняет цвет и фон благодаря правилу <strong class="highlight">a:hover</strong> в CSS-файле. Такой эффект невозможно было бы сделать в чистом HTML без CSS.</p>
+
+    <p>📌 <a href="index.html">Вернуться на главную страницу</a> — кликните сюда, чтобы проверить навигацию между страницами.</p>
+
+    <p>На этом сайте мы используем следующие CSS-правила:</p>
+    <ul>
+        <li>Стили для <strong class="highlight">body</strong> — фон, шрифт, отступы</li>
+        <li>Стили для <strong class="highlight">h1</strong> — цвет, рамка, выравнивание</li>
+        <li>Стили для <strong class="highlight">p</strong> — размер шрифта, отступы</li>
+        <li>Стили для <strong class="highlight">a и a:hover</strong> — цвета при наведении</li>
+        <li>Стили для класса <strong class="highlight">.highlight</strong> — выделение важных фрагментов</li>
+    </ul>
+
+    <footer>
+        <p>© 2026 Учебный проект. Обе страницы оформлены через один external CSS-файл.</p>
+        <p><a href="index.html">← На главную</a></p>
+    </footer>
+
+</body>
+</html>

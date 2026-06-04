@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ успеваемости студентов</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <header>
+        <h1>📊 Анализ успеваемости студентов</h1>
+        <p>Интерактивный дашборд для базы данных student_task</p>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕЙНЕР -->
+    <div class="layout">
+        
+        <!-- БОКОВАЯ ПАНЕЛЬ С КНОПКАМИ -->
+        <aside class="controls">
+            
+            <h2>📈 Статистика</h2>
+            <button class="action-btn" data-action="stat" data-metric="mean">Средняя оценка</button>
+            <button class="action-btn" data-action="stat" data-metric="median">Медианная оценка</button>
+            <button class="action-btn" data-action="stat" data-metric="total">Количество оценок</button>
+            <button class="action-btn" data-action="stat" data-metric="std">Стандартное отклонение</button>
+            <button class="action-btn" data-action="stat" data-metric="min">Минимальная оценка</button>
+            <button class="action-btn" data-action="stat" data-metric="max">Максимальная оценка</button>
+
+            <h2>📊 Графики</h2>
+            <button class="action-btn" data-action="chart" data-kind="histogram">Распределение оценок</button>
+            <button class="action-btn" data-action="chart" data-kind="courses">Средний балл по курсам</button>
+
+            <button class="action-btn clear" id="clear-btn">🗑 Очистить</button>
+
+        </aside>
+
+        <!-- ОСНОВНАЯ ОБЛАСТЬ ДЛЯ РЕЗУЛЬТАТОВ -->
+        <main id="result-area">
+            <div class="placeholder">
+                ← Нажмите кнопку слева, чтобы увидеть результат
+            </div>
+        </main>
+
+    </div>
+
+    <!-- ПОДВАЛ САЙТА -->
+    <footer>
+        <p>© 2026 Януся · Курс «Информатика» · Веб-приложение для анализа БД</p>
+    </footer>
+
+    <!-- ПОДКЛЮЧАЕМ JAVASCRIPT -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксперимент CLS — с width/height и без</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        hr {
+            margin: 50px 0;
+            border: 3px solid red;
+        }
+        .note {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 5px solid #e74c3c;
+            margin: 20px 0;
+        }
+        img {
+            display: block;
+            margin: 20px 0;
+            background-color: #f0f0f0;
+        }
+        .bad {
+            background-color: #ffe0e0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .good {
+            background-color: #e0ffe0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🧪 Эксперимент: Layout Shift (CLS)</h1>
+    
+    <div class="note">
+        <strong>🔧 Как проводить эксперимент:</strong><br>
+        1. Нажмите <kbd>F12</kbd> → вкладка <strong>Network</strong> (Сеть)<br>
+        2. Найдите выпадающий список <strong>"No throttling"</strong> → выберите <strong>"Slow 3G"</strong><br>
+        3. <strong>Перезагрузите страницу</strong> (<kbd>Ctrl+Shift+R</kbd>)<br>
+        4. <strong>Наблюдайте за текстом ПОД картинкой</strong> — прыгает или нет?<br>
+        5. Сравните Версию А (красная рамка) и Версию Б (зелёная рамка)
+    </div>
+
+    <!-- ========== ВЕРСИЯ А: Без width/height ========== -->
+    <div class="bad">
+        <h2>❌ Версия А: Картинка БЕЗ атрибутов width и height</h2>
+        <p>🔴 Размеры НЕ заданы. Браузер НЕ знает, сколько места нужно. Текст будет <strong>прыгать</strong>!</p>
+    </div>
+
+    <!-- 5 абзацев ДО картинки -->
+    <p><strong>Абзац 1:</strong> Lorem ipsum odor amet, consectetuer adipiscing elit. Himenaeos convallis consectetur mi iaculis cubilia ornare potenti vel.</p>
+    <p><strong>Абзац 2:</strong> Phasellus fusce feugiat ac posuere justo. Molestie placerat quis at pharetra rhoncus amet dictumst tellus.</p>
+    <p><strong>Абзац 3:</strong> Efficitur adipiscing libero nibh fermentum fames euismod. Nec vel est inceptos fames amet vivamus sed.</p>
+    <p><strong>Абзац 4:</strong> Turpis tristique integer consectetur rutrum sit dictumst fames. Dolor inceptos aliquet dictumst netus.</p>
+    <p><strong>Абзац 5:</strong> Nascetur taciti suspendisse nisl nascetur duis suspendisse varius. Risus erat felis montes urna.</p>
+
+    <!-- КАРТИНКА БЕЗ width/height — это ВАЖНО! -->
+    <img src="images/large-photo.jpg" 
+         alt="Большая картинка для эксперимента БЕЗ указания размеров">
+
+    <!-- 5 абзацев ПОСЛЕ картинки (они будут прыгать!) -->
+    <p><strong>Абзац 6:</strong> Ultrices mattis tempus maecenas erat aptent neque. Conubia facilisis auctor elementum arcu bibendum ex.</p>
+    <p><strong>Абзац 7:</strong> Leo arcu vel pretium nisl suspendisse mus himenaeos tellus. Condimentum elit sed eleifend fames.</p>
+    <p><strong>Абзац 8:</strong> Nulla viverra integer tempor tristique in odio parturient aptent. Senectus consectetur morbi augue.</p>
+    <p><strong>Абзац 9:</strong> Iaculis nisl tempus luctus consectetur vestibulum ridiculus. Cras orci vivamus turpis mollis.</p>
+    <p><strong>Абзац 10:</strong> Tristique scelerisque a mattis quis ultricies habitant. Lobortis euismod netus semper sit.</p>
+
+    <hr>
+
+    <!-- ========== ВЕРСИЯ Б: С width/height ========== -->
+    <div class="good">
+        <h2>✅ Версия Б: Картинка С атрибутами width и height</h2>
+        <p>🟢 Размеры заданы. Браузер ЗНАЕТ, сколько места зарезервировать. Текст <strong>НЕ прыгает</strong>!</p>
+    </div>
+
+    <!-- 5 абзацев ДО картинки -->
+    <p><strong>Абзац 1:</strong> Lorem ipsum odor amet, consectetuer adipiscing elit. Himenaeos convallis consectetur mi iaculis cubilia ornare potenti vel.</p>
+    <p><strong>Абзац 2:</strong> Phasellus fusce feugiat ac posuere justo. Molestie placerat quis at pharetra rhoncus amet dictumst tellus.</p>
+    <p><strong>Абзац 3:</strong> Efficitur adipiscing libero nibh fermentum fames euismod. Nec vel est inceptos fames amet vivamus sed.</p>
+    <p><strong>Абзац 4:</strong> Turpis tristique integer consectetur rutrum sit dictumst fames. Dolor inceptos aliquet dictumst netus.</p>
+    <p><strong>Абзац 5:</strong> Nascetur taciti suspendisse nisl nascetur duis suspendisse varius. Risus erat felis montes urna.</p>
+
+    <!-- КАРТИНКА С width/height (укажите свои размеры!) -->
+    <img src="images/large-photo.jpg" 
+         alt="Та же картинка, НО с указанием ширины и высоты"
+         width="800" 
+         height="600"
+         loading="eager">
+
+    <!-- 5 абзацев ПОСЛЕ картинки (они НЕ прыгают!) -->
+    <p><strong>Абзац 6:</strong> Ultrices mattis tempus maecenas erat aptent neque. Conubia facilisis auctor elementum arcu bibendum ex.</p>
+    <p><strong>Абзац 7:</strong> Leo arcu vel pretium nisl suspendisse mus himenaeos tellus. Condimentum elit sed eleifend fames.</p>
+    <p><strong>Абзац 8:</strong> Nulla viverra integer tempor tristique in odio parturient aptent. Senectus consectetur morbi augue.</p>
+    <p><strong>Абзац 9:</strong> Iaculis nisl tempus luctus consectetur vestibulum ridiculus. Cras orci vivamus turpis mollis.</p>
+    <p><strong>Абзац 10:</strong> Tristique scelerisque a mattis quis ultricies habitant. Lobortis euismod netus semper sit.</p>
+
+    <hr>
+
+    <div class="note">
+        <strong>📊 Что вы должны были заметить:</strong><br>
+        • <strong>Версия А (без width/height):</strong> Когда картинка загружается, текст под ней резко <strong>«прыгает» вниз</strong> — это и есть CLS (Cumulative Layout Shift).<br>
+        • <strong>Версия Б (с width/height):</strong> Браузер заранее зарезервировал место под картинку → текст <strong>стоит на месте</strong>, прыжка нет.<br>
+        • <strong>Вывод:</strong> Всегда указывайте <code>width</code> и <code>height</code> у картинок, чтобы улучшить用户体验 и SEO.
+    </div>
+
+</body>
+</html>

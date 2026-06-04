@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2 — Internal CSS</title>
+    
+    <style>
+        /* Стили для всей страницы */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        /* Стили для заголовка h1 */
+        h1 {
+            color: #2e7d32;
+            font-size: 32px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            border-bottom: 3px solid #4caf50;
+            padding-bottom: 10px;
+        }
+        
+        /* Общие стили для всех абзацев p */
+        p {
+            font-size: 16px;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        /* Стили для первого абзаца */
+        p:first-of-type {
+            color: #1a1a2e;
+            background: #e0eaff;
+        }
+        
+        /* Стили для второго абзаца */
+        p:nth-of-type(2) {
+            color: #2e7d32;
+            font-family: 'Courier New', monospace;
+            background: #e0f5e0;
+            border: 2px dashed #4caf50;
+            text-align: center;
+        }
+        
+        /* Стили для третьего абзаца */
+        p:nth-of-type(3) {
+            color: #c0392b;
+            font-family: Georgia, serif;
+            background: #ffe0e0;
+            border-left: 5px solid #e74c3c;
+            font-style: italic;
+        }
+        
+        /* Стили для списка ul */
+        ul {
+            color: #555;
+            font-size: 16px;
+            background: #f5f5f5;
+            padding: 20px 20px 20px 40px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            list-style-type: square;
+        }
+        
+        /* Стили для элементов списка li */
+        li {
+            margin: 5px 0;
+        }
+        
+        /* Особый стиль для второго пункта списка */
+        li:nth-child(2) {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        
+        /* ===== НОВОЕ ПРАВИЛО: a:hover (недоступно для inline) ===== */
+        a {
+            color: #2e7d32;
+            text-decoration: none;
+            background: #e0eaff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Псевдокласс hover — меняет цвет при наведении мыши */
+        a:hover {
+            color: white;
+            background-color: #e74c3c;
+            text-decoration: underline;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌟 Добро пожаловать на мою страницу!</h1>
+
+    <p>Это первый абзац. Здесь я рассказываю о том, как важно изучать CSS. Internal-стили (тег &lt;style&gt; в &lt;head&gt;) позволяют отделить оформление от структуры, в отличие от inline-стилей. Код становится чище и легче поддерживать.</p>
+
+    <p>✨ Второй абзац: я моноширинный и зелёный! Обратите внимание на border и margin. Теперь стили не дублируются на каждом элементе — достаточно одного правила в &lt;style&gt;.</p>
+
+    <p>📖 Третий абзац: красноватый оттенок и серифный шрифт. Internal CSS удобен для учебных проектов и одностраничных сайтов, когда не нужно подключать внешний файл.</p>
+
+    <ul>
+        <li>📌 Первый пункт списка — изучаем HTML</li>
+        <li>📌 Второй пункт — осваиваем CSS</li>
+        <li>📌 Третий пункт — пишем проекты</li>
+        <li>📌 Четвёртый пункт — делимся результатами</li>
+    </ul>
+
+    <!-- Ссылка для проверки a:hover -->
+    <p style="text-align: center; background: none; padding: 0;">
+        <a href="#">🔗 Наведи на меня мышку — цвет изменится!</a>
+    </p>
+
+    <p style="text-align: center; font-size: 14px; background: none; color: #888;">
+        <em>Подсказка: наведите курсор на ссылку выше — она станет красной с белым текстом.</em>
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Одностраничник — якоря и id</title>
+    <style>
+        /* Общие стили для страницы */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Стили для навигации */
+        nav {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        
+        /* ===== СТИЛИ ПО ID (основное задание) ===== */
+        
+        /* Секция "Обо мне" — голубой фон */
+        #about {
+            background: #e0eaff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            scroll-margin-top: 80px; /* чтобы навигация не перекрывала заголовок */
+        }
+        
+        /* Секция "Проекты" — светло-зелёный фон */
+        #projects {
+            background: #e0f5e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            scroll-margin-top: 80px;
+        }
+        
+        /* Секция "Контакты" — светло-розовый фон */
+        #contacts {
+            background: #ffe0e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            scroll-margin-top: 80px;
+        }
+        
+        /* Дополнительные стили для красоты */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            margin-top: 0;
+            color: #1a1a1a;
+        }
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>✨ Моя страница-одностраничник</h1>
+    
+    <!-- ===== НАВИГАЦИЯ С ЯКОРНЫМИ ССЫЛКАМИ ===== -->
+    <nav>
+        <ul>
+            <li><a href="#about">📖 Обо мне</a></li>
+            <li><a href="#projects">🚀 Проекты</a></li>
+            <li><a href="#contacts">📞 Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== СЕКЦИЯ 1: ОБО МНЕ ===== -->
+    <section id="about">
+        <h2>📖 Обо мне</h2>
+        <p>Меня зовут Януся, я студент Санкт-Петербургского политехнического университета. Учусь на направлении «Продукты питания животного происхождения». </p>
+        <p>В свободное время участвую в хакатонах, читаю техническую литературу и веду этот небольшой блог о программировании и учёбе.</p>
+    </section>
+
+    <!-- ===== СЕКЦИЯ 2: ПРОЕКТЫ ===== -->
+    <section id="projects">
+        <h2>🚀 Мои проекты</h2>
+        <p>За время обучения я успел реализовать несколько проектов, которые помогают мне расти как разработчику:</p>
+        <ul>
+            <li><strong>Сайт-визитка</strong> — первый проект на чистом HTML и CSS, адаптированный под мобильные устройства.</li>
+            <li><strong>Калькулятор на JavaScript</strong> — веб-приложение с базовыми математическими операциями и современным интерфейсом.</li>
+            <li><strong>Трекер привычек на Python</strong> — консольное приложение для отслеживания ежедневных задач с сохранением данных в JSON.</li>
+            <li><strong>Фотогалерея</strong> — проект с ленивой загрузкой изображений и адаптивной вёрсткой.</li>
+        </ul>
+        <p>Все проекты доступны на моём <a href="#">GitHub</a> (ссылка пока тестовая).</p>
+    </section>
+
+    <!-- ===== СЕКЦИЯ 3: КОНТАКТЫ ===== -->
+    <section id="contacts">
+        <h2>📞 Контакты</h2>
+        <p>Буду рад новым знакомствам, предложениям по сотрудничеству или просто обсуждению IT-тем!</p>
+        <ul>
+            <li>📧 Email: <a href="mailto:ivanov@spbpu.ru">Януся@spbpu.ru</a></li>
+            <li>📞 Телефон: <a href="tel:+78121234567">+7 (812) 123-45-67</a></li>
+            <li>💬 Telegram: <a href="#">@Януся</a></li>
+            <li>🐙 GitHub: <a href="#">github.com/ivanov</a></li>
+        </ul>
+        <p><em>Обычно отвечаю в течение одного рабочего дня.</em></p>
+    </section>
+
+    <hr>
+    
+    <footer>
+        <p><small>© 2026 Януся. Страница создана в учебных целях.</small></p>
+    </footer>
+
+</body>
+</html>

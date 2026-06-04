@@ -1,0 +1,281 @@
+/* ================================================
+   ПЕРЕМЕННЫЕ (CSS Custom Properties)
+   ================================================ */
+:root {
+    --primary: #2A9D8F;
+    --primary-dark: #1e6e63;
+    --secondary: #E9C46A;
+    --danger: #E76F51;
+    --bg: #F5F5F0;
+    --card-bg: #FFFFFF;
+    --text: #2C3E50;
+    --text-light: #7F8C8D;
+    --border: #E0E0DC;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ================================================
+   УНИВЕРСАЛЬНЫЙ СБРОС
+   ================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================================================
+   БАЗОВЫЕ СТИЛИ
+   ================================================ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================================================
+   ШАПКА (HEADER)
+   ================================================ */
+header {
+    background: var(--primary);
+    color: white;
+    padding: 24px 32px;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+header p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+/* ================================================
+   ДВУХКОЛОНОЧНАЯ РАСКЛАДКА (GRID)
+   ================================================ */
+.layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    padding: 28px 32px;
+    flex: 1;
+}
+
+/* ================================================
+   БОКОВАЯ ПАНЕЛЬ (ASIDE)
+   ================================================ */
+.controls {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.controls h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    margin: 16px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+}
+
+.controls h2:first-of-type {
+    margin-top: 0;
+}
+
+/* ================================================
+   КНОПКИ
+   ================================================ */
+.action-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    margin: 6px 0;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background: var(--primary-dark);
+    transform: translateX(4px);
+}
+
+.action-btn.clear {
+    background: var(--danger);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.action-btn.clear:hover {
+    background: #c95a3f;
+    transform: translateX(4px);
+}
+
+/* ================================================
+   ОСНОВНАЯ ОБЛАСТЬ (MAIN)
+   ================================================ */
+main {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    min-height: 400px;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.placeholder {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    padding: 80px 20px;
+}
+
+/* ================================================
+   КАРТОЧКА СТАТИСТИКИ
+   ================================================ */
+.stat-card {
+    background: linear-gradient(135deg, #f0f7f6 0%, #e8f4f2 100%);
+    border: 2px solid var(--primary);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: scale(1.02);
+}
+
+.stat-card .label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--primary-dark);
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.stat-card .value {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin: 12px 0 8px;
+}
+
+.stat-card .description {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* ================================================
+   КОНТЕЙНЕР ДЛЯ ГРАФИКА
+   ================================================ */
+.chart-container {
+    text-align: center;
+    background: #fafaf7;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.chart-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.chart-stats {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f0f7f6;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.chart-stats span {
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+/* ================================================
+   СОСТОЯНИЯ ЗАГРУЗКИ И ОШИБКИ
+   ================================================ */
+.loading {
+    text-align: center;
+    color: var(--text-light);
+    padding: 60px 20px;
+    font-style: italic;
+}
+
+.loading::before {
+    content: "⏳";
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.error {
+    background: #fff3f0;
+    border-left: 4px solid var(--danger);
+    color: #c0392b;
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+/* ================================================
+   ПОДВАЛ (FOOTER)
+   ================================================ */
+footer {
+    text-align: center;
+    padding: 18px;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+    background: var(--card-bg);
+}
+
+/* ================================================
+   АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ
+   ================================================ */
+@media (max-width: 700px) {
+    .layout {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 16px;
+    }
+    
+    .controls {
+        position: static;
+    }
+    
+    header {
+        padding: 16px 20px;
+    }
+    
+    main {
+        padding: 16px;
+    }
+    
+    .stat-card .value {
+        font-size: 2.5rem;
+    }
+}

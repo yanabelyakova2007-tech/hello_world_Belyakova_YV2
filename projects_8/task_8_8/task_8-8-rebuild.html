@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Януся — веб-разработчик</title>
+    <meta name="description" content="Личная страница-визитка Ивана Иванова, студента СПбПУ. Веб-разработка, проекты и контакты.">
+    <meta name="author" content="Януся">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="Иван Иванов — веб-разработчик">
+    <meta property="og:description" content="Личная страница-визитка. Веб-разработка, проекты и контакты.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Цвет адресной строки мобильного браузера -->
+    <meta name="theme-color" content="#2e7d32">
+    
+    <style>
+        /* Простые стили для наглядности (не семантика, а визуал) */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+        nav {
+            background-color: #1b5e20;
+            padding: 10px 20px;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            display: flex;
+            gap: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        article {
+            flex: 2;
+        }
+        aside {
+            flex: 1;
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #c8e6c9;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo span {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ШАПКА САЙТА (header) ===== -->
+    <header>
+        <div class="logo">
+            <span>👨‍💻</span> Януся
+        </div>
+        <p>Студент СПбПУ | Веб-разработчик | Люблю учиться и создавать</p>
+    </header>
+
+    <!-- ===== НАВИГАЦИЯ (nav) ===== -->
+    <nav aria-label="Основное меню">
+        <ul>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== ОСНОВНОЕ СОДЕРЖИМОЕ (main) ===== -->
+    <main>
+        
+        <!-- ===== ОСНОВНАЯ СТАТЬЯ (article) ===== -->
+        <article>
+            
+            <!-- Внутренний header для статьи -->
+            <header>
+                <h1>Привет! Я Януся</h1>
+                <p><time datetime="2026-06-01">1 июня 2026</time> · Обновлено сегодня</p>
+            </header>
+
+            <section id="about">
+                <h2>📖 Обо мне</h2>
+                <p>Меня зовут Януся, я студент первого курса Санкт-Петербургского политехнического университета. Учусь на направлении «Продукты питания животного происхождения». </p>
+                <p>В свободное время читаю техническую литературу, участвую в хакатонах и веду этот блог, где делюсь заметками о программировании и учёбе.</p>
+            </section>
+
+            <hr>
+
+            <section id="skills">
+                <h2>🛠️ Мои навыки</h2>
+                <p>За год обучения я освоил несколько технологий и продолжаю развиваться:</p>
+                <ul>
+                    <li><strong>HTML5</strong> — семантическая вёрстка, доступность (a11y)</li>
+                    <li><strong>CSS3</strong> — Flexbox, Grid, адаптивный дизайн</li>
+                    <li><strong>JavaScript</strong> — основы, работа с DOM, события</li>
+                    <li><strong>Python</strong> — алгоритмы, работа с данными</li>
+                    <li><strong>Git & GitHub</strong> — контроль версий</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section id="projects">
+                <h2>🚀 Мои проекты</h2>
+                
+                <article>
+                    <header>
+                        <h3>Первый сайт-визитка</h3>
+                        <p><time datetime="2026-01-15">Январь 2026</time></p>
+                    </header>
+                    <p>Мой первый полноценный сайт, свёрстанный с использованием семантических тегов. Включает страницы «Обо мне», «Портфолио» и «Контакты». Адаптирован под мобильные устройства.</p>
+                    <footer>
+                        <p>Теги: HTML, CSS, адаптивность</p>
+                    </footer>
+                </article>
+
+                <article>
+                    <header>
+                        <h3>Калькулятор на JavaScript</h3>
+                        <p><time datetime="2026-03-10">Март 2026</time></p>
+                    </header>
+                    <p>Веб-калькулятор с базовыми операциями (сложение, вычитание, умножение, деление). Реализована обработка ошибок и красивый интерфейс.</p>
+                    <footer>
+                        <p>Теги: JavaScript, CSS, события</p>
+                    </footer>
+                </article>
+
+                <article>
+                    <header>
+                        <h3>Трекер привычек на Python</h3>
+                        <p><time datetime="2026-05-20">Май 2026</time></p>
+                    </header>
+                    <p>Консольное приложение для отслеживания ежедневных привычек. Данные сохраняются в JSON-файл, есть статистика за неделю.</p>
+                    <footer>
+                        <p>Теги: Python, JSON, файловый ввод/вывод</p>
+                    </footer>
+                </article>
+            </section>
+
+            <!-- FAQ блок с details/summary -->
+            <section id="faq">
+                <h2>❓ Часто задаваемые вопросы</h2>
+                
+                <details>
+                    <summary>Как ты начал изучать программирование?</summary>
+                    <p>Всё началось с курса на Stepik по основам Python. Мне так понравилось, что я решил поступать на IT-направление. Сейчас изучаю веб-разработку и планирую стать fullstack-разработчиком.</p>
+                </details>
+                
+                <details>
+                    <summary>Какие книги посоветуешь новичку?</summary>
+                    <p>«HTML и CSS. Разработка и дизайн веб-сайтов» Джона Дакетта — отличный старт. По JavaScript — «Выразительный JavaScript» Марейн Хавербеке.</p>
+                </details>
+                
+                <details>
+                    <summary>Какой редактор кода ты используешь?</summary>
+                    <p>VS Code — лучший выбор для веб-разработки. Много плагинов, быстрый, удобный.</p>
+                </details>
+            </section>
+
+            <!-- Внутренний footer для статьи -->
+            <footer>
+                <hr>
+                <p><small>© Януся, 2026. Все тексты написаны лично мной.</small></p>
+            </footer>
+        </article>
+
+        <!-- ===== БОКОВАЯ ПАНЕЛЬ (aside) ===== -->
+        <aside>
+            <h3>📌 Популярные теги</h3>
+            <ul>
+                <li><a href="#">HTML5</a></li>
+                <li><a href="#">CSS3</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">VS Code</a></li>
+                <li><a href="#">Git</a></li>
+            </ul>
+
+            <hr>
+
+            <h3>📂 Архив записей</h3>
+            <ul>
+                <li><a href="#">Июнь 2026 (3)</a></li>
+                <li><a href="#">Май 2026 (5)</a></li>
+                <li><a href="#">Апрель 2026 (2)</a></li>
+                <li><a href="#">Март 2026 (4)</a></li>
+            </ul>
+
+            <hr>
+
+            <h3>🔗 Полезные ссылки</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/ru/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+                <li><a href="https://stepik.org/" target="_blank" rel="noopener noreferrer">Stepik — курсы</a></li>
+                <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- ===== ПОДВАЛ САЙТА (footer) ===== -->
+    <footer>
+        <!-- Контактная информация в address -->
+        <address>
+            <strong>Связаться со мной:</strong><br>
+            📧 Email: <a href="mailto:ivanov@spbpu.ru?subject=Вопрос%20по%20блогу">yanusya@spbpu.ru</a><br>
+            📞 Телефон: <a href="tel:+78121234567">+7 (812) 123-45-67</a><br>
+            💬 Telegram: <a href="https://t.me/ivanov" target="_blank" rel="noopener noreferrer">@yanusya</a><br>
+            🐙 GitHub: <a href="https://github.com/ivanov" target="_blank" rel="noopener noreferrer">github.com/ivanov</a>
+        </address>
+        <hr style="background-color: #c8e6c9; height: 1px;">
+        <p>© 2026 Януся. Все права защищены.</p>
+        <p><small>Сайт создан в учебных целях в рамках курса по веб-разработке.</small></p>
+        
+        <!-- Маленькая навигация в подвале -->
+        <nav aria-label="Меню в подвале">
+            <ul style="display: flex; justify-content: center; gap: 15px; list-style: none; padding: 0;">
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Условия использования</a></li>
+                <li><a href="#">Карта сайта</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2 — Единицы измерения в CSS</title>
+    <style>
+        /* ===========================================
+           ЭКСПЕРИМЕНТ С ЕДИНИЦАМИ ИЗМЕРЕНИЯ
+           
+           Измените размер окна браузера и наблюдайте:
+           - px — не меняется
+           - em/rem — зависят от шрифта
+           - % — от ширины родителя
+           - vw — от ширины окна
+        =========================================== */
+
+        /* Меняем базовый размер шрифта для эксперимента с em/rem */
+        html {
+            font-size: 20px;  /* Попробуйте поменять на 16px или 24px */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Контейнер для экспериментов с процентами */
+        .container {
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Общие стили для всех блоков */
+        .box {
+            border: 2px solid #4caf50;
+            padding: 12px;
+            margin-bottom: 10px;
+            background-color: #fafaf7;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        /* Блок с фиксированной шириной в пикселях (НЕ меняется) */
+        .size-px {
+            width: 200px;
+            background-color: #e0eaff;
+        }
+
+        /* Блок с шириной в em (зависит от font-size текущего элемента) */
+        .size-em {
+            width: 15em;
+            background-color: #e0f5e0;
+        }
+
+        /* Блок с шириной в rem (зависит от font-size html) */
+        .size-rem {
+            width: 12rem;
+            background-color: #ffe0e0;
+        }
+
+        /* Блок с шириной в процентах (от ширины родителя .container) */
+        .size-percent {
+            width: 50%;
+            background-color: #fff0d8;
+        }
+
+        /* Блок с шириной в viewport width (от ширины окна браузера) */
+        .size-vw {
+            width: 30vw;
+            background-color: #e8e0f5;
+        }
+
+        /* Дополнительный блок для сравнения */
+        .info {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        code {
+            background-color: #ddd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📏 Эксперимент: единицы измерения в CSS</h1>
+    <p>Попробуйте <strong>изменить размер окна браузера</strong> и <strong>поменять font-size в html</strong> (в коде: <code>html { font-size: 20px; }</code>). Наблюдайте, как ведут себя блоки.</p>
+
+    <div class="container">
+        <h2>Блоки внутри контейнера (ширина контейнера = 100% от body)</h2>
+        
+        <div class="box size-px">
+            <strong>📐 .size-px</strong> — width: 200px (фиксированная, не меняется)
+        </div>
+        
+        <div class="box size-em">
+            <strong>📏 .size-em</strong> — width: 15em (зависит от font-size текущего элемента)
+        </div>
+        
+        <div class="box size-rem">
+            <strong>📐 .size-rem</strong> — width: 12rem (зависит от font-size html)
+        </div>
+        
+        <div class="box size-percent">
+            <strong>📊 .size-percent</strong> — width: 50% (от ширины родителя .container)
+        </div>
+        
+        <div class="box size-vw">
+            <strong>🖥️ .size-vw</strong> — width: 30vw (от ширины окна браузера)
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="info">
+        <h3>📖 Что вы должны заметить:</h3>
+        <ul>
+            <li><strong>px (пиксели)</strong> — блок <code class="size-px"></code> НЕ меняет размер при изменении окна</li>
+            <li><strong>em</strong> — зависит от <code>font-size</code> текущего элемента (по умолчанию наследуется от родителя)</li>
+            <li><strong>rem</strong> — зависит от <code>font-size</code> корневого элемента <code>html</code></li>
+            <li><strong>% (проценты)</strong> — зависит от ширины РОДИТЕЛЯ (<code>.container</code>)</li>
+            <li><strong>vw (viewport width)</strong> — зависит от ширины ОКНА БРАУЗЕРА</li>
+        </ul>
+        <h3>🔬 Попробуйте сами:</h3>
+        <ol>
+            <li>Измените <code>html { font-size: 20px; }</code> на <code>16px</code> — блоки с <strong>rem</strong> изменят размер</li>
+            <li>Уменьшите окно браузера — блоки с <strong>%</strong> и <strong>vw</strong> изменят размер</li>
+            <li>Блок с <strong>px</strong> останется неизменным в любом случае</li>
+        </ol>
+    </div>
+
+</body>
+</html>

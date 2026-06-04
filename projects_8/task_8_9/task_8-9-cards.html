@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточки — классы и категории</title>
+    <style>
+        /* Общий стиль для всех карточек */
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            background-color: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        /* Эффект при наведении на любую карточку */
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* Стили внутри карточки */
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        
+        .card p {
+            margin-bottom: 0;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        /* ===== КАТЕГОРИИ ПРИОРИТЕТОВ (левая полоса) ===== */
+        
+        /* Высокий приоритет — красная левая полоса */
+        .priority-high {
+            border-left: 6px solid #e74c3c;
+        }
+        
+        /* Средний приоритет — оранжевая левая полоса */
+        .priority-medium {
+            border-left: 6px solid #f39c12;
+        }
+        
+        /* Низкий приоритет — зелёная левая полоса */
+        .priority-low {
+            border-left: 6px solid #27ae60;
+        }
+        
+        /* ===== ОСОБАЯ КАРТОЧКА (featured) ===== */
+        .featured {
+            background: linear-gradient(135deg, #fff8e7, #fff);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 1px solid #ffd966;
+        }
+        
+        /* Дополнительно: заголовок у featured карточки */
+        .featured h3 {
+            color: #d4a017;
+        }
+        
+        /* Контейнер для всех карточек */
+        .cards-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Заголовок страницы */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        hr {
+            margin: 30px 0;
+        }
+        
+        /* Легенда цветов */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .legend span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .legend-high { background: #e74c3c; }
+        .legend-medium { background: #f39c12; }
+        .legend-low { background: #27ae60; }
+        .legend-featured { background: #ffd966; border: 1px solid #d4a017; }
+    </style>
+</head>
+<body>
+
+    <div class="cards-container">
+        <h1>📋 Список задач</h1>
+        <p class="subtitle">Карточки с разными приоритетами — красный, оранжевый и зелёный</p>
+        
+        <!-- Легенда (пояснение цветов) -->
+        <div class="legend">
+            <div><span class="legend-high"></span> Высокий приоритет</div>
+            <div><span class="legend-medium"></span> Средний приоритет</div>
+            <div><span class="legend-low"></span> Низкий приоритет</div>
+            <div><span class="legend-featured"></span> Featured (особая)</div>
+        </div>
+        
+        <hr>
+        
+        <!-- ===== КАРТОЧКА 1: priority-high (без featured) ===== -->
+        <div class="card priority-high">
+            <h3>🔥 Сдать проект по HTML</h3>
+            <p>Дедлайн: завтра, 18:00. Нужно доделать семантическую вёрстку и проверить все ссылки. Это самая важная задача на сегодня.</p>
+        </div>
+        
+        <!-- ===== КАРТОЧКА 2: priority-high + featured (два класса!) ===== -->
+        <div class="card priority-high featured">
+            <h3>⭐ Подготовить презентацию для хакатона</h3>
+            <p>Выступление перед жюри — ключевой этап. Нужно собрать слайды о проекте, продумать речь и ответить на возможные вопросы.</p>
+        </div>
+        
+        <!-- ===== КАРТОЧКА 3: priority-medium ===== -->
+        <div class="card priority-medium">
+            <h3>🟠 Изучить тему: Flexbox и Grid</h3>
+            <p>Пройти практические задания на Stepik, сделать конспект с примерами кода. Это поможет в вёрстке следующего проекта.</p>
+        </div>
+        
+        <!-- ===== КАРТОЧКА 4: priority-medium ===== -->
+        <div class="card priority-medium">
+            <h3>🟠 Написать пост в блог</h3>
+            <p>Тема: «Как я изучал семантическую вёрстку». Добавить примеры кода и скриншоты.</p>
+        </div>
+        
+        <!-- ===== КАРТОЧКА 5: priority-low ===== -->
+        <div class="card priority-low">
+            <h3>✅ Почистить почту</h3>
+            <p>Разобрать входящие письма, ответить на важные, удалить спам. Можно сделать в свободное время.</p>
+        </div>
+        
+        <!-- ===== КАРТОЧКА 6: priority-low ===== -->
+        <div class="card priority-low">
+            <h3>✅ Обновить резюме на LinkedIn</h3>
+            <p>Добавить новые проекты и навыки. Не срочно, но полезно для будущих стажировок.</p>
+        </div>
+        
+        <hr>
+        
+        <footer>
+            <p><small>📌 Карточка с классом <strong>priority-high featured</strong> получила оба набора стилей: красную левую полосу + тень и золотистый фон.</small></p>
+        </footer>
+    </div>
+
+</body>
+</html>
